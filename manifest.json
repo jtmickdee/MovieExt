@@ -1,13 +1,13 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension keeps track of what I watched online and blocks pop up",
+  "name": "Movie Extension",
+  "description": "This extension keeps track of what I watched online",
   "version": "1.0",
 
   "content_scripts":[
     {
-      "matches": ["https://*.solarmovie.is/*"],
+      "matches": ["https://*.solarmovie.ph/*", "http://*.solarmovie.ph/*","https://*.primewire.ag/*","http://*.primewire.ag/*"],
       "js": ["js/cscript.js"]
     }
   ],
@@ -16,8 +16,14 @@
     "default_icon": "img/movie.png",
     "default_title": "Click here"
   },
+  "background": {
+  "scripts": [
+    "js/bgscript.js"
+  ],
+  "persistent": false
+},
   "permissions": [
-    "tabs","https://*.solarmovie.is/*",
+    "tabs","https://*.solarmovie.ph/*","https://*.primewire.ag/*",
     "storage"
   ]
 }
